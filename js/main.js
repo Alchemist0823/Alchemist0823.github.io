@@ -4,6 +4,8 @@ $(window).load (function() {
 	$(".page:first").addClass("pagenow");
 	$(".page:first").removeClass("pageout");
 
+	$(".colorboxshow").colorbox({rel:"colorboxshow"});
+
 	
 	if ($(".page .pagev").length > 0) {
 		$(".page .pagev").addClass("pagevout");
