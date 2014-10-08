@@ -98,9 +98,7 @@ textarea {
    ========================================================================== */
 
 body {
-    background: #5e656b;
-    background: radial-gradient(#5e656b, #28343b);
-    background: -webkit-radial-gradient(#5e656b, #28343b);
+    background: #28343b;
     color: #cceeee;
     overflow: hidden;
     font-family: 'Ubuntu', Arial, sans-serif;
@@ -128,6 +126,14 @@ body {
 
     .projects-bd, .skills-bd{
         background-image: url("../img/projects-bg.jpg");
+    }
+}
+
+
+@media all and (max-width: 1024px) {
+
+    body {
+        font-size: 10pt;
     }
 }
 
