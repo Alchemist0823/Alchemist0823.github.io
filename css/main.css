@@ -98,34 +98,40 @@ textarea {
    ========================================================================== */
 
 body {
-    background-image: url("../img/website.jpg");
-    background-size: cover;
+    background: #5e656b;
+    background: radial-gradient(#5e656b, #28343b);
     color: #cceeee;
     overflow: hidden;
     font-family: 'Ubuntu', Arial, sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     transition: all 1s;
 }
 
-.home-bd {
-    background-image: url("../img/website.jpg");
-}
 
-.about-bd {
-    background-image: url("../img/about-bg.jpg");
-}
+@media all and (min-width: 1024px) {
 
-.projects-bd, .skills-bd{
-    background-image: url("../img/projects-bg.jpg");
+    body {
+
+        background-size: cover;
+        background-image: url("../img/website.jpg");
+    }
+
+    .home-bd {
+        background-image: url("../img/website.jpg");
+    }
+
+    .about-bd {
+        background-image: url("../img/about-bg.jpg");
+    }
+
+    .projects-bd, .skills-bd{
+        background-image: url("../img/projects-bg.jpg");
+    }
 }
 
 ul {
     padding: 0 0 0 20px;
-}
-
-@media all and (max-width: 1024px) {
-    body {
-        font-size: 10pt;
-    }
 }
 
 li ul li {
