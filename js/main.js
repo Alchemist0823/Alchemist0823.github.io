@@ -10,11 +10,21 @@ $(window).load (function() {
 		$(".page:first").addClass("pagenow");
 		$(".page:first").removeClass("pageout");
 	} else {
-		$("#" + hash).addClass("pagenow");
-		$("#" + hash).removeClass("pageout");
+		var prev = 1;
+		$(".page").each(function() {
+			if ($(this).attr('id') == hash) {
+				prev = 0;
+				$(this).addClass("pagenow");
+				$(this).removeClass("pageout");
+			} else if (prev == 1) {
+				$(this).addClass("pagein");
+				$(this).removeClass("pageout");
+			}
+		})
 	}
 
 	window.location.hash = "#/" + $(".pagenow").attr('id');
+	$("body").removeClass().addClass($(".pagenow").attr('id') + "-bd");
 
 	$(".colorboxshow").colorbox({rel:"colorboxshow"});
 
@@ -47,6 +57,7 @@ $(window).load (function() {
 		}
 
 		window.location.hash = "#/" + $(".pagenow").attr('id');
+		$("body").removeClass().addClass($(".pagenow").attr('id') + "-bd");
 	};
 
 	var backPage = function(){
@@ -71,6 +82,7 @@ $(window).load (function() {
 		}
 
 		window.location.hash = "#/" + $(".pagenow").attr('id');
+		$("body").removeClass().addClass($(".pagenow").attr('id') + "-bd");
 	};
 
 	//$('#page2').hide();
