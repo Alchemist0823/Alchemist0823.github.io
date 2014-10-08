@@ -100,6 +100,7 @@ textarea {
 body {
     background: #5e656b;
     background: radial-gradient(#5e656b, #28343b);
+    background: -webkit-radial-gradient(#5e656b, #28343b);
     color: #cceeee;
     overflow: hidden;
     font-family: 'Ubuntu', Arial, sans-serif;
