@@ -5,6 +5,12 @@ $(window).load (function() {
 	var hash = idx != -1 ? url.substring(idx + 2) : "";
 	
 	$(".page").addClass("pageout");
+
+	if ($(window).width() >= 1024) {
+		var img = new Image();
+		img.src = "about-bg.jpg";
+		img.src = "projects-bg.jpg";
+	}
 	
 	if (hash == "" || $("#" + hash).length == 0) {
 		$(".page:first").addClass("pagenow");
@@ -27,7 +33,6 @@ $(window).load (function() {
 	$("body").removeClass().addClass($(".pagenow").attr('id') + "-bd");
 
 	$(".colorboxshow").colorbox({rel:"colorboxshow"});
-
 	
 	if ($(".page .pagev").length > 0) {
 		$(".page .pagev").addClass("pagevout");
