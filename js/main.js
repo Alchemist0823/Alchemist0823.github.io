@@ -3,15 +3,20 @@ $(window).load (function() {
 	var url = window.location.href;
 	var idx = url.indexOf("#");
 	var hash = idx != -1 ? url.substring(idx + 2) : "";
-	
-	$(".page").addClass("pageout");
 
+	$(".page").addClass("pageout");
+	setTimeout(
+	  function()
+	  {
+			$(".page").css("display", "block");
+			$(".page").addClass("page-trans");
+	  }, 100);
 	if ($(window).width() >= 1024) {
 		var img = new Image();
 		img.src = "about-bg.jpg";
 		img.src = "projects-bg.jpg";
 	}
-	
+
 	if (hash == "" || $("#" + hash).length == 0) {
 		$(".page:first").addClass("pagenow");
 		$(".page:first").removeClass("pageout");
@@ -33,7 +38,7 @@ $(window).load (function() {
 	$("body").removeClass().addClass($(".pagenow").attr('id') + "-bd");
 
 	$(".colorboxshow").colorbox({rel:"colorboxshow"});
-	
+
 	if ($(".page .pagev").length > 0) {
 		$(".page .pagev").addClass("pagevout");
 		$(".page .pagev:first").toggleClass("pagevnow");
@@ -48,15 +53,15 @@ $(window).load (function() {
 
 			$(".pagein").toggleClass("pageout");
 			$(".pagein").removeClass("pagein");
-			
+
 			$(".pageout:first").toggleClass("pagenow");
 			$(".pageout:first").removeClass("pageout");
 		}
 		else {
-		//var 
+		//var
 			$(".pagenow").toggleClass("pagein");
 			$(".pagenow").removeClass("pagenow");
-			
+
 			$(".pageout:first").toggleClass("pagenow");
 			$(".pageout:first").removeClass("pageout");
 		}
@@ -73,15 +78,15 @@ $(window).load (function() {
 
 			$(".pageout").toggleClass("pagein");
 			$(".pageout").removeClass("pageout");
-			
+
 			$(".pagein:last").toggleClass("pagenow");
 			$(".pagein:last").removeClass("pagein");
 		}
 		else {
-		//var 
+		//var
 			$(".pagenow").toggleClass("pageout");
 			$(".pagenow").removeClass("pagenow");
-			
+
 			$(".pagein:last").toggleClass("pagenow");
 			$(".pagein:last").removeClass("pagein");
 		}
@@ -104,14 +109,14 @@ $(window).load (function() {
 
 				$(".pagenow .pagevin").toggleClass("pagevout");
 				$(".pagenow .pagevin").removeClass("pagevin");
-				
+
 				$(".pagenow .pagevout:first").toggleClass("pagevnow");
 				$(".pagenow .pagevout:first").removeClass("pagevout");
 			} else {
-			//var 
+			//var
 				$(".pagenow .pagevnow").toggleClass("pagevin");
 				$(".pagenow .pagevnow").removeClass("pagevnow");
-				
+
 				$(".pagenow .pagevout:first").toggleClass("pagevnow");
 				$(".pagenow .pagevout:first").removeClass("pagevout");
 			}
@@ -135,7 +140,7 @@ $(window).load (function() {
 		$("#page2").show();
 		$('#page2').css("opacity", "0");
 		$('#page2').css("left", "100%");
-		
+
 		$("#page2").animate({
 			opacity: 1,
 			left: "10%"
